@@ -1,15 +1,17 @@
 package com.njust;
 
+import java.io.Externalizable;
 import java.io.IOException;
+import java.io.ObjectInput;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.ToString;
 
 @ToString
-public class Person implements Serializable {
+public class Person2 implements Externalizable {
 
 	private static final long serialVersionUID = 9066561578579619797L;
 
@@ -20,7 +22,11 @@ public class Person implements Serializable {
 	@Getter
 	private Gender gender;
 
-	public Person(String name, int age, Gender gender) {
+	public Person2() {
+		System.out.println("default constructor!");
+	}
+
+	public Person2(String name, int age, Gender gender) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -38,5 +44,15 @@ public class Person implements Serializable {
 		out.writeInt(age);
 	}
 
+	@Override
+	public void writeExternal(ObjectOutput out) throws IOException {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void readExternal(ObjectInput in) throws IOException,
+			ClassNotFoundException {
+		// TODO Auto-generated method stub
+	}
 
 }
