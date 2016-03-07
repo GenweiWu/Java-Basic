@@ -1,5 +1,4 @@
 # Java-Basic
 java基础学习 
 
-tips:
-1、使用了lombok来简化代码
+1. [自定义注解](https://github.com/GenweiWu/Java-Basic/tree/master/CustomAnnotation)
