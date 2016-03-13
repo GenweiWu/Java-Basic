@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+	<book name="111">AAA</book>
+	<book name="222">BBB</book>
+
+	<books>
+		<book name="333">CCC</book>
+	</books>
+
+	<people age="33" male="true" name="Dave"></people>
+</bookstore>
