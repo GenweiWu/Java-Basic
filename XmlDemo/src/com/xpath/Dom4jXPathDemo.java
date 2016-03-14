@@ -40,7 +40,7 @@ public class Dom4jXPathDemo {
 		Element bookEle = (Element) doc.selectSingleNode("//books/book");
 		String name = bookEle.attributeValue("name");
 		String text = bookEle.getText();
-		// System.out.println("name:" + name + ",text:" + text);
+		System.out.println("name:" + name + ",text:" + text);
 		// name:333,text:CCC
 	}
 
@@ -52,7 +52,7 @@ public class Dom4jXPathDemo {
 		Element bookEle = booksEle.element("book");
 		String name = bookEle.attributeValue("name");
 		String text = bookEle.getText();
-		// System.out.println("name:" + name + ",text:" + text);
+		System.out.println("name:" + name + ",text:" + text);
 		// name:333,text:CCC
 	}
 
@@ -72,7 +72,7 @@ public class Dom4jXPathDemo {
 			 */
 			String name = bookEle.attribute("name").getValue();
 			String text = bookEle.getText();
-			// System.out.println("name:" + name + ",text:" + text);
+			System.out.println("name:" + name + ",text:" + text);
 			// name:111,text:AAA
 			// name:222,text:BBB
 			// name:333,text:CCC
