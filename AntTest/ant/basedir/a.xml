@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="testBasedir" basedir="./">
+
+	<target name="setup.property">
+		<echo message="${basedir}/../" />
+	</target>
+
+	<target name="testBasedir" depends="setup.property">
+		<ant antfile="b.xml" dir="sub">
+		</ant>
+	</target>
+
+
+</project>

@@ -1,0 +1,17 @@
+<project default="exec02">
+	<target name="exec01">
+		<exec output="result.txt" executable="G:\360Downloads\Software\curl\curl.exe">
+		</exec>
+	</target>
+
+	<target name="exec02">
+		<exec output="result.txt" executable="G:\360Downloads\Software\curl\curl.exe">
+			<arg line="-o 1.jpg http://mimg.127.net/logo/163logo.gif" />
+		</exec>
+	</target>
+	<target name="exec03">
+		<exec output="result.txt" executable="G:\360Downloads\Software\curl\curl.exe">
+			<arg line="-O http://mimg.127.net/logo/163logo.gif" />
+		</exec>
+	</target>
+</project>

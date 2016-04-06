@@ -1,0 +1,66 @@
+<?xml version="1.0"?><!-- ANT build file to test a specific feature or bug 
+	of ANT. Dominique Devienne <ddevienne@lgc.com> January 2003 -->
+<project name="antx" default="test">
+	<target name="test">
+		<!-- This doesn't return immediately, but starts IE -->
+		<exec vmlauncher="false"
+			executable="C:\Program Files\Internet Explorer\IEXPLORE.EXE">
+		</exec>
+
+		<!-- This opens a DOS window, not even launching IE, nor returning -->
+
+		<exec vmlauncher="false" executable="cmd.exe">
+			<arg line="/c start" />
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program 
+			Files/Internet Explorer/IEXPLORE.EXE" />
+		</exec>
+
+		<!-- This opens a DOS window, not even launching IE, nor returning -->
+		<exec vmlauncher="false" executable="start">
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program 
+			Files/Internet Explorer/IEXPLORE.EXE" />
+		</exec>
+		<!-- This doesn't return immediately, but starts IE, as expected -->
+		<exec vmlauncher="true"
+			executable="C:\Program Files\Internet Explorer\IEXPLORE.EXE">
+		</exec>
+		<!-- This opens a DOS window, not even launching IE, nor returning -->
+		<exec vmlauncher="true" executable="cmd.exe">
+			<arg line="/c start" />
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program 
+			Files/Internet Explorer/IEXPLORE.EXE" />
+		</exec>
+		<!-- This hangs Ant 'inside' the CMD shell started... -->
+		<exec vmlauncher="true" executable="cmd.exe">
+			<arg line="/c start /B" />
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program 
+			Files/Internet Explorer/IEXPLORE.EXE" />
+		</exec>
+		<!-- This fails, since there's no start program of course -->
+		<exec vmlauncher="true" executable="start">
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program 
+			Files/Internet Explorer/IEXPLORE.EXE" />
+		</exec>
+		<!-- This opens a DOS window, not even launching IE, nor returning P:\org_apache\antx>type 
+			cmd-spawn.bat start %* -->
+		<exec vmlauncher="false" executable="cmd-spawn.bat">
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program Files/Internet 
+			Explorer/IEXPLORE.EXE" />
+		</exec>
+		<!-- This hangs Ant 'inside' the CMD shell started... P:\org_apache\antx>type 
+			cmd-spawn.bat start /B %* -->
+		<exec vmlauncher="false" executable="cmd-spawn.bat">
+			<arg
+				value="http://www.myexception.cn/open-source/C:/Program Files/Internet 
+			Explorer/IEXPLORE.EXE" />
+		</exec>
+
+		<echo message="Launched IE" />
+	</target>
+</project>

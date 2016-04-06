@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="readFromEnv">
+
+	<target name="readFromEnv" description="测试读取系统变量">
+		<property environment="env" />
+
+		<property name="os" value="${env.OS}" />
+		<property name="path" value="${env.Path}" />
+
+		<echo message="os is:${os}" />
+		<echo message="path is:${path}" />
+	</target>
+
+</project>

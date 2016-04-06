@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="testParam" basedir="./">
+	<target name="testProperty" description="测试property">
+		<echo message="letter is =${letter}" />
+		<echo message="number =${number}" />
+	</target>
+
+	<target name="testParam" description="测试调用传递过来的参数" depends="testProperty">
+		<echo message="param =${param}" />
+	</target>
+
+
+</project>

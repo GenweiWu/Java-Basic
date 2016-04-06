@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="testBasedir2" basedir="./">
+	<target name="testBasedir2">
+		<echo message="${basedir}/../" />
+	</target>
+
+</project>

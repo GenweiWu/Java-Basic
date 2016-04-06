@@ -1,0 +1,67 @@
+<project default="exec06">
+	<target name="exec01" description="调用dir命令">
+		<exec executable="cmd.exe" output="result.txt">
+			<arg value="dir" />
+		</exec>
+	</target>
+
+	<target name="exec02" description="打开记事本">
+		<exec executable="notepad">
+		</exec>
+	</target>
+	<!--以下是错误的尝试-->
+	<!--
+	<target name="exec02_" description="调用记事本">
+		<exec executable="cmd" os="windows" vmlauncher="true">
+			<arg value="C:\Windows\System32\notepad.exe" />
+		</exec>
+	</target>
+	-->
+
+	<!--没有配置环境变量的程序无法直接运行-->
+	<target name="exec03">
+		<exec executable="D:\Program Files (x86)\Notepad++\notepad++.exe">
+		</exec>
+	</target>
+
+	<!--说明：java配置了,cmd中java直接运行可以识别-->
+	<target name="exec04">
+		<exec executable="java">
+			<arg value="-version" />
+		</exec>
+	</target>
+	<!--以下是错误的尝试-->
+	<!--
+	<target name="exec04_" >
+		<exec executable="cmd">
+			<arg value="java -version" />
+		</exec>
+	</target>
+	-->
+
+	<!--说明：javac没有配置,cmd中javac直接运行不识别:设置全路径-->
+	<!--
+	<target name="exec05_">
+		<exec executable="C:\Program Files\Java\jdk1.7.0_45\bin\javac">
+			<arg value="-version" />
+		</exec>
+	</target>
+	-->
+
+	<target name="exec05">
+		<exec output="result.txt" executable="C:\Program Files\Java\jdk1.7.0_45\bin\javac">
+			<arg line="-encoding utf-8  StringDemo.java" />
+		</exec>
+	</target>
+
+	<!--运行一般的软件也可以-->
+	<target name="exec06">
+		<exec output="result.txt" executable="D:\Program Files\QQ截图工具绿色版.exe">
+		</exec>
+	</target>
+	<target name="exec07">
+		<exec executable="D:\Program Files (x86)\Notepad++\notepad++.exe">
+			<arg line="-n10 result.txt" />
+		</exec>
+	</target>
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="testParam" basedir="./">
+	<property name="letter" value="I am from b.xml" />
+
+	<target name="testParam" description="测试property被覆盖">
+		<echo message="letter =${letter}" />
+	</target>
+
+
+</project>

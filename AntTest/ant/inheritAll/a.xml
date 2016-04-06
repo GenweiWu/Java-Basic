@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="callOtherXml" basedir="./">
+	<property name="letter" value="I am from a.xml" />
+
+	<target name="readProperty" description="读取property">
+		<echo message="letter is =${letter}" />
+	</target>
+
+	<target name="callOtherXml" depends="readProperty">
+		<ant antfile="b.xml" inheritall="false">
+		</ant>
+	</target>
+
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="testProperty" basedir="./">
+	<property name="letter" value="ABC" />
+
+	<target name="setup.property" description="变量初始化">
+		<property name="number" value="123" />
+	</target>
+
+	<target name="testProperty" depends="setup.property" description="测试property">
+		<echo message="letter is =${letter}" />
+		<echo message="number =${number}" />
+	</target>
+
+	<target name="callOtherXml" depends="setup.property">
+		<ant antfile="b.xml">
+			<property name="param" value="param" />
+		</ant>
+	</target>
+
+	<target name="testReadparam" depends="callOtherXml">
+		<echo message="param =${param}" />
+	</target>
+</project>

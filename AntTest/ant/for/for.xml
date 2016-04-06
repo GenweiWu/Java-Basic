@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="test" name="checkLinux">
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	</taskdef>
+
+
+	<target name="foreach_01">
+		<for list="1,2,3,4,5,6,7" delimiter="," param="line">
+			<sequential>
+				<antcall target="doCheck">
+					<param name="line" value="@{line}" />
+				</antcall>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="foreach_02">
+		<property file="linux.properties" />
+		<for list="${letter_list}" delimiter="," param="line">
+			<sequential>
+				<antcall target="doCheck">
+					<param name="line" value="@{line}" />
+				</antcall>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="doCheck">
+		<echo message="${line}" />
+	</target>
+
+	<target name="test" depends="foreach_01,foreach_02">
+	</target>
+</project>
