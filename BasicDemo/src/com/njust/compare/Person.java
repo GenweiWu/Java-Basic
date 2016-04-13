@@ -28,4 +28,15 @@ public class Person implements Comparable<Person> {
 		return "Person [name=" + name + ", age=" + age + "]";
 	}
 
+	// 此处为了测试，故意让compareTo方法+equals方法不一致
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Person) {
+			Person another = (Person) obj;
+			int diff = this.age - another.getAge();
+			return diff > 0;
+		}
+		return false;
+	}
+
 }
