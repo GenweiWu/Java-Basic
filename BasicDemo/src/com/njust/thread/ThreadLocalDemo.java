@@ -15,7 +15,6 @@ public class ThreadLocalDemo {
         threadLocalDemo.testSimple();
     }
 
-
     /**
      * testSimple:从下面的值可以看出初始化值为自定义内容+每个线程可以获取各自的线程的数据
      * <p>
@@ -34,7 +33,6 @@ public class ThreadLocalDemo {
         }
     }
 
-
     public class Task implements Runnable {
         @Override
         public void run() {
@@ -52,8 +50,6 @@ public class ThreadLocalDemo {
         private void test02() {
             System.out.println("getValue: " + HOLDER.get());
         }
-
-
     }
 }
 

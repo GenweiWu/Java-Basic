@@ -19,9 +19,9 @@ public class MultipleThreadDemo {
     /**
      * 1.2 验证线程池下可能有问题(如果不是每个线程，每次都设置下值的话)
      * 注意线程池下的线程出现重用时，值重复出现了！！！
-     Thread[pool-1-thread-1,5,main]-->a7becfb6-81ca-4cec-8a8f-e8a59b1c5bb3
-     Thread[pool-1-thread-2,5,main]-->4176f47f-09f3-461d-a2d9-c9b8e7acbe0c
-     Thread[pool-1-thread-2,5,main]-->4176f47f-09f3-461d-a2d9-c9b8e7acbe0c
+     * Thread[pool-1-thread-1,5,main]-->a7becfb6-81ca-4cec-8a8f-e8a59b1c5bb3
+     * Thread[pool-1-thread-2,5,main]-->4176f47f-09f3-461d-a2d9-c9b8e7acbe0c
+     * Thread[pool-1-thread-2,5,main]-->4176f47f-09f3-461d-a2d9-c9b8e7acbe0c
      */
     private void testWithThreadPool() {
         Task task = new Task();
@@ -46,7 +46,6 @@ public class MultipleThreadDemo {
             thread.start();
         }
     }
-
 
     public class Task implements Runnable {
         @Override
