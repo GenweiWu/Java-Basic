@@ -5,7 +5,13 @@
 - 对于日期类型，[需要转换](http://freemarker.org/docs/ref_builtins_date.html)。不过我倾向于传递的时候就已经转换成字符串类型了
 
 #### 如何处理list或者map类型
-
+- [list用法](http://freemarker.org/docs/ref_directive_list.html)
+- map[低版本支持不太好](http://freemarker.org/docs/ref_directive_list.html#ref.directive.list),推荐写法：
+ ```ftl
+ <#list hash as key, value>
+     Part repeated for each key-value pair
+ </#list>
+```
 
 #### 针对jackson传值的问题和解决
 - 对boolean类型处理，不用转换了

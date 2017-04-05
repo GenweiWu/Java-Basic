@@ -1,5 +1,8 @@
+package com.njust.util.simple;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.njust.util.FreeMarkerUtil;
 import freemarker.template.TemplateException;
 
 import java.io.File;
