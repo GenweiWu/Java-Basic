@@ -1,6 +1,6 @@
 <div>
-    <p>${name}</p>
-    <p>${age}</p>
-    <p>${isMale}</p>
-    <p>${date}</p>
+    <p>${node.name.asText()}</p>
+    <p>${node.age}</p>
+    <p>${node.isMale}</p>
+    <p>${node.date}</p>
 </div>

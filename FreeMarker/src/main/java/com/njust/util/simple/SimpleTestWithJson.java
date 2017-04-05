@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 简单测试freemarker用法
@@ -30,9 +32,12 @@ public class SimpleTestWithJson {
         SimpleDateFormat sdt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         objectNode.putPOJO("date", sdt.format(new Date()));
 
+        Map<String, Object> dataMap = new HashMap<>();
+        dataMap.put("node", objectNode);
+
         try {
             FreeMarkerUtil freeMarkerUtil = new FreeMarkerUtil(templateDir);
-            System.out.println(freeMarkerUtil.doTest("simpleWithJson.ftl", objectNode));
+            System.out.println(freeMarkerUtil.doTest("simpleWithJson.ftl", dataMap));
         } catch (IOException | TemplateException e) {
             e.printStackTrace();
         }
