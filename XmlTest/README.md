@@ -25,5 +25,6 @@
     `.`用来标识当前节点,例如xpath如下：`.//row[x='555']`
 3. 获取下一个兄弟节点   
     `"./following-sibling::*[1]"`
-
+4. 另外，可以对位置进行限制：
+  `following-sibling::*[position()>=2 and position()<=3]`
 ---
